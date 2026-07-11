@@ -6,7 +6,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'git https://github.com/KalinduBalasuriya/sample-node-crud.git'
+                git 'https://github.com/KalinduBalasuriya/sample-node-crud.git'
             }
         }
 
