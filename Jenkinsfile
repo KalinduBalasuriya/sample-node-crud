@@ -1,27 +1,23 @@
 pipeline {
-
     agent any
 
     stages {
 
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm ci'
             }
         }
 
-
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                echo 'testing...'
-            }
-        }
-
-
-        stage('Build') {
-            steps {
-                echo 'Application build completed'
+                echo 'No tests configured'
             }
         }
     }
