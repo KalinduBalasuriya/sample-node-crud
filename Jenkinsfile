@@ -4,12 +4,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/KalinduBalasuriya/sample-node-crud.git'
-            }
-        }
-
 
         stage('Install Dependencies') {
             steps {
