@@ -1,23 +1,15 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+    }
+
     stages {
-
-        stage('Checkout') {
+        stage('Print Message') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'No tests configured'
+                echo "🚀 New push detected on development branch!"
+                echo "Build Number: 123"
             }
         }
     }
