@@ -9,7 +9,7 @@ pipeline {
         stage('Print Message') {
             steps {
                 echo "🚀 New push detected on development branch!"
-                echo "Build Number: HG45981"
+                echo "Build Number: ${env.BUILD_NUMBER}"
             }
         }
     }
@@ -17,6 +17,10 @@ pipeline {
     post {
         success {
             githubNotify(
+                credentialsId: 'github-token',
+                account: 'KalinduBalasuriya',
+                repo: 'sample-node-crud',
+                sha: env.GIT_COMMIT,
                 status: 'SUCCESS',
                 description: 'Build passed',
                 context: 'Jenkins CI'
@@ -24,6 +28,10 @@ pipeline {
         }
         failure {
             githubNotify(
+                credentialsId: 'github-token',
+                account: 'KalinduBalasuriya',
+                repo: 'sample-node-crud',
+                sha: env.GIT_COMMIT,
                 status: 'FAILURE',
                 description: 'Build failed',
                 context: 'Jenkins CI'
