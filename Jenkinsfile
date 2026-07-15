@@ -8,19 +8,29 @@ pipeline {
     stages {
         stage('Print Message') {
             steps {
-                  githubNotify(
-                    status: 'PENDING',
-                    description: 'Build is running...',
-                    context: 'Jenkins CI'
-                )
                 echo "🚀 New push detected on development branch!"
-                echo "Build Number: 123"
-                  githubNotify(
-                    status: 'Completed',
-                    description: 'Build is Completed...',
-                    context: 'Jenkins CI'
-                )
+                echo "Build Number: HG45981"
             }
+        }
+    }
+
+    post {
+        success {
+            githubNotify(
+                status: 'SUCCESS',
+                description: 'Build passed',
+                context: 'Jenkins CI'
+            )
+        }
+        failure {
+            githubNotify(
+                status: 'FAILURE',
+                description: 'Build failed',
+                context: 'Jenkins CI'
+            )
+        }
+        always {
+            cleanWs()
         }
     }
 }
