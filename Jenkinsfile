@@ -26,7 +26,7 @@ pipeline {
     post {
         success {
             githubNotify(
-                credentialsId: 'github-token',
+                credentialsId: 'github-token-up',
                 account: 'KalinduBalasuriya',
                 repo: 'sample-node-crud',
                 sha: env.GIT_COMMIT,
@@ -37,7 +37,7 @@ pipeline {
         }
         failure {
             githubNotify(
-                credentialsId: 'github-token',
+                credentialsId: 'github-token-up',
                 account: 'KalinduBalasuriya',
                 repo: 'sample-node-crud',
                 sha: env.GIT_COMMIT,
