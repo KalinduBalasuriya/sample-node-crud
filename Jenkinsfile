@@ -31,7 +31,7 @@ pipeline {
                 repo: 'sample-node-crud',
                 sha: env.GIT_COMMIT,
                 status: 'SUCCESS',
-                description: 'Build passed',
+                description: 'Jenkins Build passed',
                 context: 'Jenkins CI'
             )
         }
