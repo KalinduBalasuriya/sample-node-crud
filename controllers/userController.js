@@ -46,7 +46,7 @@ exports.updateUser = (req, res) => {
 
   if (!user) {
     return res.status(404).json({
-      message: "User not found here! Please check the user name!",
+      message: "User not found here!",
     });
   }
 
