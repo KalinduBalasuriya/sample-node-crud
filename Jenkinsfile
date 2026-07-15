@@ -6,10 +6,19 @@ pipeline {
     }
 
     stages {
+        stage('Check Credentials') {
+            steps {
+                withCredentials([string(credentialsId: 'github-token', variable: 'TOKEN')]) {
+                    sh 'echo "Token found: ${#TOKEN} characters long"'
+                }
+            }
+        }
+
         stage('Print Message') {
             steps {
                 echo "🚀 New push detected on development branch!"
-                echo "Build Number: }"
+                echo "Build Number: ${env.BUILD_NUMBER}"
+                echo "Commit: ${env.GIT_COMMIT}"
             }
         }
     }
