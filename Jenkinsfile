@@ -9,7 +9,7 @@ pipeline {
         stage('Print Message') {
             steps {
                 echo "🚀 New push detected on development branch!"
-                echo "Build Number: ${env.BUILD_NUMBER}"
+                echo "Build Number: }"
             }
         }
     }
