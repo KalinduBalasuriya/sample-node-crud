@@ -51,7 +51,7 @@ const connectDB = async () => {
 
 const getPool = () => {
   if (!pool) {
-    throw new Error("Database not initialized. Call connectDB first.");
+    throw new Error("Database not initialized. Call connectDB first!");
   }
   return pool;
 };
