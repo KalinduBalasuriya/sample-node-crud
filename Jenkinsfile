@@ -63,7 +63,7 @@ pipeline {
                     
                     npm ci &&
                     
-                    pm2 restart sample-node-crud
+                    pm2 restart sample-node-api
                     "
                     
                     '''
