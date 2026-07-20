@@ -55,7 +55,7 @@ pipeline {
                 sshagent(['node-crud-server-key']) {
 
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-207-120-245.compute-1.amazonaws.com
+                    ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-207-120-245.compute-1.amazonaws.com "
                     
                     cd /home/ec2-user/sample-node-crud &&
                     
@@ -64,6 +64,7 @@ pipeline {
                     npm ci &&
                     
                     pm2 restart sample-node-crud
+                    "
                     
                     '''
                 }
