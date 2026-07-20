@@ -52,7 +52,7 @@ pipeline {
                 echo "Starting production deployment"
 
 
-                sshagent(['app-server-key']) {
+                sshagent(['node-crud-server-key']) {
 
                     sh '''
                     ssh -o StrictHostKeyChecking=no ec2-user@APP_EC2_PUBLIC_IP "
