@@ -73,7 +73,7 @@ exports.updateUser = async (req, res) => {
     res.json(result.recordset[0]);
   } catch (err) {
     res.status(500).json({
-      message: "Error updating user",
+      message: "Error updating user!",
       error: err.message,
     });
   }
