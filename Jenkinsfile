@@ -57,7 +57,7 @@ pipeline {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-207-120-245.compute-1.amazonaws.com
                     
-                    cd sample-node-crud &&
+                    cd /home/ec2-user/sample-node-crud &&
                     
                     git pull origin main &&
                     
@@ -65,7 +65,6 @@ pipeline {
                     
                     pm2 restart sample-node-crud
                     
-                    "
                     '''
                 }
             }
